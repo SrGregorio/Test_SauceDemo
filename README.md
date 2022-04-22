@@ -1,30 +1,45 @@
 # Teste automatizado do site [saucedemo](https://www.saucedemo.com/). 🚀
 
+## Starting
 
-#### As etapas realizadas no testes:
-1. Autenticação do usuário;
-2. Ordenação dos Produtos (Menor para o Maior Preço);
-3. Selecionar 2 produtos e adicionar ao carrinho;
-4. Finalizar o processo da compra.
+### Instalação
 
-#### Tecnologias/ ferramentas utilizadas:
-* [Python](https://www.python.org)
-* [Robot Framework](https://robotframework.org/)
-* [Selenium With Python](https://selenium-python.readthedocs.io/)
-* [Google Chrome](https://www.google.com/intl/pt-BR/chrome/) 
+Instale o Robot usando as etapas abaixo.
 
-#### Dependências do Projeto:
+1. Instalar o Python 3
+```
+https://www.python.org/downloads/
+```
 
-1. Instalar o robot framework através do Pip => pip install robotframework
-2. Instalar o Selenium => pip install robotframework-seleniumlibrary
+2. Instalar o Robot Framework
+```
+pip3 install robotframework
+```
 
-#### Execução do Teste:
+3. Instalar Selenium para o Robot Framework
+```
+pip3 install --upgrade robotframework-seleniumlibrary
+```
 
-1. Comando: robot -d ./log saucedemo.robot => Executa o teste e registra o resultado na pasta log.
-2. robot saucedemo.robot => Executa o teste sem registrar o log na pasta.
+3. Instalar o driver do Google Chrome e adicionar nas variáveis do sistema.
+```
+https://chromedriver.chromium.org/downloads
+```
 
-#### Estrutura das pastas no projeto :
+### Após a configuração anterior:
 
-* log => Local onde armazena o log, output, report e screenshot.
-* PO => Page Objects: Armazena os cenários de testes criados para utilização do projeto.
-* resource=> Recurso base utilizado no projeto.
+1. Clonar esse repositório.
+2. Executar o testes através do comando
+```
+robot -d ./logs  ./tests/SauceDemoBDD.tests.robot
+```
+
+### Arquivos por diretórios
+
+|               Diretório | Arquivos na pasta                                                               |
+| ----------------------: | ----------------------------------------------------------------------------- |
+|                `config` | **config.robot** arquivo de configuração.  |
+|            `components` | **components.robot** todos os componentes mapeados utilizados no teste.                            |
+|                 `tests` | Arquivo **SauceDemoBDD.tests.robot** contém todos os casos de teste.   |
+|                 `pages` | Arquivo **SauceDemoHomePage.pages.robot** contém todos Keywords utilizados (Page Object Pattern).|
+|         `pages/commons` | **hooks.pages.commons.robot** contém os setups para inicio e fim utilizados no teste.             |
